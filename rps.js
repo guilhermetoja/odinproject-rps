@@ -20,7 +20,7 @@ function getPlayerChoice() {
     do {
       var playerChoice = prompt(
         "What is your choice, traveler? Paper, rock or scissors?"
-      );
+      ).toLowerCase();
 
       if (
         playerChoice == "paper" ||
@@ -39,4 +39,5 @@ function getPlayerChoice() {
   }
 }
 
-// console.log(getPlayerChoice()); for debugging
+// for debugging
+console.log(getPlayerChoice());
