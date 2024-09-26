@@ -98,3 +98,24 @@ function playRound(humanChoice, computerChoice) {
 // var computerChoice = getComputerChoice();
 
 // console.log(playRound(humanChoice, computerChoice));
+
+function playGame() {
+  for (let i = 0; i < 5; i++) {
+    console.log("Round " + (i + 1));
+    let humanChoice = getPlayerChoice();
+    let computerChoice = getComputerChoice();
+
+    console.log(playRound(humanChoice, computerChoice));
+    console.log("Next round");
+  }
+
+  if (playerScore > computerScore) {
+    console.log("You are the ultimate winner, friend");
+  } else if (playerScore < computerScore) {
+    console.log("You are a loser. Do it again.");
+  } else {
+    console.log("Tie");
+  }
+}
+
+playGame();
