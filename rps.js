@@ -1,6 +1,5 @@
 function getComputerChoice() {
   const randomNumber = Math.floor(Math.random() * 3);
-  console.log(randomNumber);
   switch (randomNumber) {
     case 0:
       return "rock";
@@ -11,7 +10,8 @@ function getComputerChoice() {
   }
 }
 
-// console.log(getComputerChoice()); for debugging the func
+//  for debugging the func
+// console.log(getComputerChoice());
 
 function getPlayerChoice() {
   try {
@@ -40,4 +40,61 @@ function getPlayerChoice() {
 }
 
 // for debugging
-console.log(getPlayerChoice());
+// console.log(getPlayerChoice());
+
+var playerScore = 0;
+var computerScore = 0;
+
+function playRound(humanChoice, computerChoice) {
+  switch (humanChoice) {
+    case "paper":
+      if (computerChoice == "rock") {
+        playerScore++;
+        return "Winner! Paper beats Rock.";
+      }
+
+      if (computerChoice == "scissors") {
+        computerScore++;
+        return "Loser! Scissors beats Paper.";
+      }
+
+      if (computerChoice == "paper") {
+        return "Tie! Paper and Paper!";
+      }
+
+    case "rock":
+      if (computerChoice == "scissors") {
+        playerScore++;
+        return "Winner! Rock beats Scissors.";
+      }
+
+      if (computerChoice == "paper") {
+        computerScore++;
+        return "Loser! Paper beats Rock.";
+      }
+
+      if (computerChoice == "rock") {
+        return "Tie! Rock and Rock! (maybe 'N roll too!)";
+      }
+
+    case "scissors":
+      if (computerChoice == "paper") {
+        playerScore++;
+        return "Winner! Scissors beats Paper.";
+      }
+
+      if (computerChoice == "rock") {
+        computerScore++;
+        return "Loser! Rock beats Scissors.";
+      }
+
+      if (computerChoice == "scissors") {
+        return "Tie! Scissors and Scissors!";
+      }
+  }
+}
+
+// var humanChoice = getPlayerChoice();
+// var computerChoice = getComputerChoice();
+
+// console.log(playRound(humanChoice, computerChoice));
